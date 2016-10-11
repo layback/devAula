@@ -1,0 +1,22 @@
+div.externa {
+	background-color: Gainsboro;
+	width: 530px;
+	height: 500px;
+	float: left;
+}
+
+div.cabecalho {
+	background-color: blue;
+	text-align: center;
+	width: 500px;
+	margin-left: 15px;
+	margin-top: 50px;
+}
+
+div.div_form {
+	width: 490px;
+	margin-left: 20px;
+}
+div.mensagem_erro{
+	color: red;
+}
