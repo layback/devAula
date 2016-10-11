@@ -6,6 +6,9 @@
 	<body>
 	
 		<?php
+			
+			$conexao = mysqli_connect('localhost', 'root', '', 'locadoraveiculos');
+					
 			if(isset($_POST['cadastro'])){
 				$marca = $_POST['marcas'];
 				$modelo = $_POST['modelo'];
@@ -31,7 +34,11 @@
 				if(isset($_POST['pa'])) { $pa = 'S'; $verifica = true; } else { $pa = 'N'; }
 				
 				
-				$connexao = mysqli_connect('localhost', 'root', '', 'locadoraveiculos');
+				$query = "INSERT INTO veiculo(marca, modelo, ano, direcao, ar_condicionado, 
+				air_bag, alarme, banco_couro, som, travas, piloto_automatico, outro) VALUES
+				('{$marca}', '{$modelo}', {$ano}, '{$dh}', '{$ac}', '{$ab}', '{$al}', '{$bc}', '{$sm}', '{$tv}', '{$pa}', 'TESTE')";
+				mysqli_query($conexao, $query);
+				mysqli_close($conexao);
 			}
 					
 		?>
