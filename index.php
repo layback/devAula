@@ -43,15 +43,15 @@
 				if(isset($_POST['pa'])) { $pa = 'S'; $verifica = true; } else { $pa = 'N'; }
 				if(isset($_POST['ot'])) { 
 					$verifica = true;
-					if(empty($outro)){
+					if(empty($outro) || strlen($outro) < 2){
 						$verificaOutro = false;
 					}
 				}
 				
-				if($verifica && $verificaOutro && strlen($outro) >= 2){
+				if($verifica && $verificaOutro){
 					$query = "INSERT INTO veiculo(marca, modelo, ano, direcao, ar_condicionado, 
 					air_bag, alarme, banco_couro, som, travas, piloto_automatico, outro) VALUES
-					('{$marca}', '{$modelo}', {$ano}, '{$dh}', '{$ac}', '{$ab}', '{$al}', '{$bc}', '{$sm}', '{$tv}', '{$pa}', 'TESTE')";
+					('{$marca}', '{$modelo}', {$ano}, '{$dh}', '{$ac}', '{$ab}', '{$al}', '{$bc}', '{$sm}', '{$tv}', '{$pa}', '{$outro}')";
 					mysqli_query($conexao, $query);
 					mysqli_close($conexao);
 					?>
@@ -67,13 +67,15 @@
 						<p class="erro">O veículo precisa ter no mínimo um opcional selecionado</p>
 						<?php
 					} else if(!$verificaOutro){
-						?>
-						<p class="erro">O preenchimento do campo outro é obrigatório quando selecionado</p>
-						<?php
-					} else if(strlen($outro) < 2){
-						?>
-						<p class="erro">Campo outro precisa de no mínimo duas letras</p>
-						<?php
+						if(empty($outro)){
+							?>
+							<p class="erro">O preenchimento do campo outro é obrigatório quando selecionado</p>
+							<?php
+						} else {
+							?>
+							<p class="erro">Campo outro precisa de no mínimo duas letras</p>
+							<?php
+						}
 					}
 				}
 			}					
@@ -148,7 +150,7 @@
 					</div>
 					<div style="padding-top: 250;">
 					<input type="submit" name="cadastro" value="Cadastrar"> <br>
-					<input type="button" value="Listar todos os cadastros" >
+					<input type="button" value="Listar todos os cadastros" onclick="location.href='lista-veiculos.php'" >
 					</div>
 				</form>
 			</div>

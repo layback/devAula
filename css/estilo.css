@@ -5,11 +5,26 @@ div.externa {
 	float: left;
 }
 
+div.externa_tela_cheia {
+	background-color: Gainsboro;
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+
 div.cabecalho {
 	background-color: blue;
 	text-align: center;
 	width: 500px;
 	margin-left: 15px;
+	margin-top: 50px;
+}
+
+div.cabecalho_tela_cheia {
+	background-color: blue;
+	text-align: center;
+	margin-left: 15px;
+	margin-right: 15px;
 	margin-top: 50px;
 }
 
@@ -36,4 +51,18 @@ p.erro{
     font-weight: bold;
     background-color: yellow;
     width: 530;
+}
+
+td.coluna{
+	text-align: center;
+}
+
+table, th, td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+table#t01 {
+    width: 100%;
+    background-color: #f1f1c1;
 }
