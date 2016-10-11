@@ -20,3 +20,20 @@ div.div_form {
 div.mensagem_erro{
 	color: red;
 }
+
+p.sucesso{
+    color: green;
+    padding-left: 150;
+    font-size: large;
+    font-weight: bold;
+    background-color: yellow;
+    width: 380;
+}
+
+p.erro{
+    color: red;
+    font-size: large;
+    font-weight: bold;
+    background-color: yellow;
+    width: 530;
+}
