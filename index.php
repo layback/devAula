@@ -31,7 +31,7 @@
 				if(isset($_POST['pa'])) { $pa = 'S'; $verifica = true; } else { $pa = 'N'; }
 				
 				
-				mysqli_connect('localhost', 'root', '', 'locadoraveiculos');
+				$connexao = mysqli_connect('localhost', 'root', '', 'locadoraveiculos');
 			}
 					
 		?>
