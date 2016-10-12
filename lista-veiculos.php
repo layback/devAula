@@ -41,14 +41,14 @@
 					<td class="coluna"><?= $veiculo['marca'] ?></td>
 					<td class="coluna"><?= $veiculo['modelo'] ?></td>
 					<td class="coluna"><?= $veiculo['ano'] ?></td>
-					<td class="coluna"><?= $veiculo['direcao'] ?></td>
-					<td class="coluna"><?= $veiculo['ar_condicionado'] ?></td>
-					<td class="coluna"><?= $veiculo['air_bag'] ?></td>
-					<td class="coluna"><?= $veiculo['alarme'] ?></td>
-					<td class="coluna"><?= $veiculo['banco_couro'] ?></td>
-					<td class="coluna"><?= $veiculo['som'] ?></td>
-					<td class="coluna"><?= $veiculo['travas'] ?></td>
-					<td class="coluna"><?= $veiculo['piloto_automatico'] ?></td>
+					<td class="coluna"><?= $veiculo['direcao'] == 'S' ? 'X' : '' ?></td>
+					<td class="coluna"><?= $veiculo['ar_condicionado'] == 'S' ? 'X' : '' ?></td>
+					<td class="coluna"><?= $veiculo['air_bag'] == 'S' ? 'X' : '' ?></td>
+					<td class="coluna"><?= $veiculo['alarme'] == 'S' ? 'X' : '' ?></td>
+					<td class="coluna"><?= $veiculo['banco_couro'] == 'S' ? 'X' : '' ?></td>
+					<td class="coluna"><?= $veiculo['som'] == 'S' ? 'X' : '' ?></td>
+					<td class="coluna"><?= $veiculo['travas'] == 'S' ? 'X' : '' ?></td>
+					<td class="coluna"><?= $veiculo['piloto_automatico'] == 'S' ? 'X' : '' ?></td>
 					<td class="coluna"><?= $veiculo['outro'] ?></td>
 				</tr>
 				<?php
